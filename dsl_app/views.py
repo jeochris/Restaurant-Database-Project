@@ -18,5 +18,4 @@ def register(request):
         new_passwd = request.POST['passwd']
         new_person = User(name = new_name, login_id = new_id, login_pw = new_passwd, join_date = timezone.now())
         new_person.save()
-        print('check')
         return HttpResponse('User Added')
