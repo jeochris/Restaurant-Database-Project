@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dsl_restaurant',
         'USER': 'root',
-        'PASSWORD': '700806',
+        'PASSWORD': get_secret("DB_PASSWORD"),
         'HOST': 'localhost',
         'PORT': '3306',
     }
