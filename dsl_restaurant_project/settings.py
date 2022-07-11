@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dsl_app'
+    'dsl_app',
+    'common'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 로그인 성공후 이동하는 URL
+# 메인페이지로 이동
+LOGIN_REDIRECT_URL = "/dsl_app/"
+
+# 로그아웃시 이동하는 URL
+# 메인페이지로 이동
+LOGOUT_REDIRECT_URL = "/dsl_app/"

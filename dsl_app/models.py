@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -42,7 +43,7 @@ class Review(models.Model):
     rating = models.IntegerField()
     comment = models.CharField(max_length=1000, blank=True, null=True)
     image = models.TextField(blank=True, null=True)
-    user = models.ForeignKey('User', models.DO_NOTHING)
+    user = models.ForeignKey(User, models.DO_NOTHING)
     restaurant = models.ForeignKey(Restaurant, models.DO_NOTHING)
 
     class Meta:
@@ -68,13 +69,13 @@ class Tag(models.Model):
         db_table = 'tag'
 
 
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20)
-    login_id = models.CharField(unique=True, max_length=20)
-    login_pw = models.CharField(max_length=10)
-    join_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'user'
+# class User(models.Model):
+#     user_id = models.AutoField(primary_key=True)
+#     name = models.CharField(max_length=20)
+#     login_id = models.CharField(unique=True, max_length=20)
+#     login_pw = models.CharField(max_length=10)
+#     join_date = models.DateTimeField(blank=True, null=True)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'user'
